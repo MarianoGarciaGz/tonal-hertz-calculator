@@ -1,0 +1,55 @@
+/* ========== Style ========== */
+
+/* ❤️ Fonts */
+:root {
+    font-family: "IBM Plex Mono", monospace;
+    --font-default: "IBM Plex Mono", monospace;
+}
+
+/* palette 🎨 */
+:root {
+    --color-primary: #292e51;
+    --color-secondary: #ec3434;
+    --color-white: #eeeeee;
+    --color-black: #282828;
+    --color-yellow: #ffcc00;
+    --color-red: #dd3030;
+    --color-blue: #18a1db;
+    --color-shadow: rgba(0, 0, 0, 0.5);
+}
+
+/* Smooth scroll behavior */
+:root {
+    scroll-behavior: smooth;
+}
+
+/* ⚡ Preset */
+
+/* El div se ocultará cuando el ancho de la pantalla sea menor o igual a 600px */
+@media screen and (max-width: 650px) {
+    .hidde-mobile {
+        display: none;
+    }
+}
+
+.hyphens-none {
+    hyphens: none;
+}
+
+.hyphens-manual {
+    hyphens: manual;
+}
+
+.btn {
+    background-color: var(--color-blue);
+    border: none;
+}
+
+/* index */
+
+body {
+    font-family: var(--font-default);
+    color: var(--color-white);
+    overflow-x: hidden;
+    background: var(--color-black);
+}
