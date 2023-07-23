@@ -2,16 +2,16 @@ const $frecuencyTableDOM = document.getElementById("f-table");
 const $tuningInput = document.getElementById("tuningInput");
 const $calculateButton = document.getElementById("calculateButton");
 
-const notesList = ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"];
+const notesList = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
 
 function calculateFrequencies(tuning) {
     const pianoArray = [...Array(10)].map(() => Array(12).fill(0));
 
     for (let x = 0; x < pianoArray.length; x++) {
         for (let y = 0; y < pianoArray[x].length; y++) {
-            const hz_distance = Math.pow(2, y / 12);
-            pianoArray[x][y] = (Math.pow(2, x) * (tuning / 8)) * hz_distance;
-            pianoArray[x][y] = pianoArray[x][y].toFixed(5);
+            const hz_distance = Math.pow(2, (y - 9) / 12);
+            pianoArray[x][y] = (Math.pow(2, x) * (tuning / 16)) * hz_distance;
+            pianoArray[x][y] = Math.trunc(pianoArray[x][y] * 100000) / 100000;
         }
     }
 
@@ -30,20 +30,22 @@ $calculateButton.addEventListener("click", () => {
 });
 
 function populateTable(pianoArray) {
-    $frecuencyTableDOM.innerHTML = ""; // Clear existing content
-
-    for (let x = 0; x < pianoArray.length; x++) {
-        for (let y = 0; y < pianoArray[x].length; y++) {
+    $frecuencyTableDOM.innerHTML = ` <tr class="f-table__headers">
+                        <th class="f-table__h">Note</th>
+                        <th class="f-table__h">Frequency</th>
+                    </tr>`;
+    for (let x = pianoArray.length - 1; x >= 0; x--) {
+        for (let y = 11; y >= 0; y--) {
             const note = `${x}${notesList[y]}`;
             const frequency = `${pianoArray[x][y]} hz`;
 
             const tr = document.createElement("tr");
             switch (y) {
                 case 1:
-                case 4:
+                case 3:
                 case 6:
-                case 9:
-                case 11:
+                case 8:
+                case 10:
                     tr.classList.add("f-table__row--black");
                     break;
                 default:

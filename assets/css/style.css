@@ -15,7 +15,7 @@
     --color-yellow: #ffcc00;
     --color-red: #dd3030;
     --color-blue: #18a1db;
-    --color-light: rgba(70, 255, 212, 0.5);
+    --color-light: rgba(61, 248, 204, 0.8);
     --color-shadow: rgba(0, 0, 0, 0.5);
     --border-min: 1em;
     --border-max: 5em;
@@ -67,6 +67,7 @@ body {
         1em 1em 3em var(--color-shadow);
 }
 .calculator__input {
+    margin: 5em 0em 5em 2em;
     width: 50%;
 }
 
@@ -74,11 +75,32 @@ body {
     display: inline-block;
 }
 
+.frequencyForm__label {
+    font-size: 1em;
+    font-weight: bolder;
+}
+.frequencyForm__input {
+    font-size: 1em;
+    border: none;
+    border-radius: var(--border-min);
+    padding: 0 0 0 1rem;
+}
+.frequencyForm__btn {
+    font-size: 1em;
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--border-min);
+    background-color: var(--color-primary);
+    box-shadow: -0.5em -0.5em 1em var(--color-light),
+        0.5em 0.5em 1em var(--color-shadow);
+}
+
 .calculator__output {
 }
 
 .f-table {
-    font-size: 1em;
+    margin: 1em 0em 1em 0em;
+    font-size: 1.2em;
     width: 30em;
 }
 .f-table__headers {
