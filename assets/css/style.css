@@ -8,14 +8,17 @@
 
 /* palette 🎨 */
 :root {
-    --color-primary: #292e51;
+    --color-primary: #00c999;
     --color-secondary: #ec3434;
     --color-white: #eeeeee;
     --color-black: #282828;
     --color-yellow: #ffcc00;
     --color-red: #dd3030;
     --color-blue: #18a1db;
+    --color-light: rgba(70, 255, 212, 0.5);
     --color-shadow: rgba(0, 0, 0, 0.5);
+    --border-min: 1em;
+    --border-max: 5em;
 }
 
 /* Smooth scroll behavior */
@@ -51,5 +54,61 @@ body {
     font-family: var(--font-default);
     color: var(--color-white);
     overflow-x: hidden;
-    background: var(--color-black);
+    background: var(--color-primary);
+}
+
+.calculator {
+    display: flex;
+    width: 80%;
+    height: auto;
+    border-radius: var(--border-max);
+    margin: auto;
+    box-shadow: -1em -1em 3em var(--color-light),
+        1em 1em 3em var(--color-shadow);
+}
+.calculator__input {
+    width: 50%;
+}
+
+.frequencyForm {
+    display: inline-block;
+}
+
+.calculator__output {
+}
+
+.f-table {
+    font-size: 1em;
+    width: 30em;
+}
+.f-table__headers {
+}
+.f-table__h {
+}
+
+.f-table__row {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    border-radius: 0px 0.5em 0.5em 0px;
+    transition: 0.5s;
+}
+.f-table__row:hover {
+}
+
+.f-table__row--black {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    border-radius: 0px 0.5em 0.5em 0px;
+    transition: 0.5s;
+}
+
+.f-table__row--black:hover {
+}
+
+.f-table__note {
+    width: 30%;
+}
+
+.f-table__frecuency {
+    border-radius: 0px 0.5em 0.5em 0px;
 }

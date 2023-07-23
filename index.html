@@ -2,14 +2,56 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tonal-Hertz Calculator</title>
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mariano García</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicon -->
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;700&display=swap" rel="stylesheet">
+
+    <!-- Vendor -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
+
+    <main>
+        <h1 class="display-1 text-center fw-medium mb-3">Hertz Calculator</h1>
+        <section class="calculator">
+
+            <div class="calculator__input">
+                <form id="frequencyForm">
+                    <p>A4:</p>
+                    <input type="text" id="tuningInput" placeholder="440" class="">
+                    <button type="button" id="calculateButton">Calculate</button>
+                </form>
+            </div>
+
+            <div class="calculator__output">
+                <table class="f-table" id="f-table">
+                    <tr class="f-table__headers">
+                        <th class="f-table__h">Note</th>
+                        <th class="f-table__h">Frequency</th>
+                    </tr>
+                </table>
+            </div>
+        </section>
+    </main>
+
+
     <div class="NotesArray" id="notesArray"></div>
 
 
