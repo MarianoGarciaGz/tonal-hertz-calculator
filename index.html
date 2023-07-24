@@ -36,11 +36,19 @@
                 <form id="frequencyForm">
                     <label class="frequencyForm__label">A4:</label>
                     <input type="text" id="tuningInput" placeholder="440" class="frequencyForm__input">
+                    <label class="frequencyForm__label">hz</label>
+                    <label class="frequencyForm__label">Notes:</label>
+                    <input type="text" id="notesInput" placeholder="12" class="frequencyForm__input" disabled>
+
                     <button type="button" id="calculateButton" class="frequencyForm__btn">Calculate</button>
                 </form>
             </div>
 
             <div class="calculator__output">
+                <div>
+                    <button type="button" id="prevOctaveButton">Previous Octave</button>
+                    <button type="button" id="nextOctaveButton">Next Octave</button>
+                </div>
                 <table class="f-table" id="f-table">
                     <tr class="f-table__headers">
                         <th class="f-table__h">Note</th>
