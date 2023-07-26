@@ -14,12 +14,21 @@ function calculateFrequencies(tuning) {
     for (let x = 0; x < pianoArray.length; x++) {
         for (let y = 0; y < pianoArray[x].length; y++) {
             const hz_distance = Math.pow(2, (y - 9) / 12);
-            pianoArray[x][y] = (Math.pow(2, x) * (tuning / 8)) * hz_distance;
+            pianoArray[x][y] = (Math.pow(2, x) * (tuning / 16)) * hz_distance;
             pianoArray[x][y] = pianoArray[x][y].toFixed(5);
         }
     }
 
     return pianoArray;
+}
+
+function updateTableVisibility(visible) {
+    const tableContainer = document.getElementById("tableContainer");
+    if (visible) {
+        tableContainer.classList.add("show"); // Agrega la clase "show" para mostrar la tabla suavemente
+    } else {
+        tableContainer.classList.remove("show"); // Remueve la clase "show" para ocultar la tabla suavemente
+    }
 }
 
 $calculateButton.addEventListener("click", () => {
@@ -30,6 +39,7 @@ $calculateButton.addEventListener("click", () => {
     } else {
         const pianoArray = calculateFrequencies(tuning);
         populateTable(pianoArray, currentOctave);
+        updateTableVisibility(true); // Hace visible la tabla al presionar "Calculate"
     }
 });
 
@@ -59,7 +69,7 @@ function updateTable() {
 }
 
 function populateTable(pianoArray, octave) {
-    $frecuencyTableDOM.innerHTML = ` <tr class="f-table__headers">
+    $frecuencyTableDOM.innerHTML = `<tr class="f-table__headers">
                         <th class="f-table__h">Note</th>
                         <th class="f-table__h">Frequency</th>
                     </tr>`;
@@ -75,7 +85,7 @@ function populateTable(pianoArray, octave) {
             case 6:
             case 8:
             case 10:
-                tr.classList.add("f-table__row--black");
+                tr.classList.add("f-table__row", "f-table__row--black");
                 break;
             default:
                 tr.classList.add("f-table__row");

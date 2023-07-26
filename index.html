@@ -14,47 +14,107 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;700&display=swap" rel="stylesheet">
-
-    <!-- Vendor -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
 
     <!-- css -->
-    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="preconnect" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="preconnect" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
 
     <main>
-        <h1 class="display-1 text-center fw-medium mb-3">Hertz Calculator</h1>
+        <h1 class="">Hertz Calculator</h1>
         <section class="calculator">
-
-            <div class="calculator__input">
-                <form id="frequencyForm">
-                    <label class="frequencyForm__label">A4:</label>
-                    <input type="text" id="tuningInput" placeholder="440" class="frequencyForm__input">
-                    <label class="frequencyForm__label">hz</label>
-                    <label class="frequencyForm__label">Notes:</label>
-                    <input type="text" id="notesInput" placeholder="12" class="frequencyForm__input" disabled>
-
-                    <button type="button" id="calculateButton" class="frequencyForm__btn">Calculate</button>
+            <div class="variables subsection">
+                <h4>Variables</h4>
+                <form class="variables__form form" id="variables">
+                    <div class="form__div">
+                        <label class="form__label">A4:</label>
+                        <input type="text" id="tuningInput" placeholder="440" class="input form__input">
+                    </div>
+                    <div class="form__div">
+                        <label class="form__label">Notes:</label>
+                        <input type="text" id="notesInput" placeholder="12" class="input form__input" disabled>
+                    </div>
+                    <div class="form__div">
+                        <label class="form__label">In:</label>
+                        <input type="text" id="notesInput" placeholder="Hz" class="input form__input" disabled>
+                    </div>
+                    <div class="form__div">
+                        <label class="form__label">Decimals:</label>
+                        <input type="text" id="notesInput" placeholder="5" class="input form__input" disabled>
+                    </div>
+                    <button type="button" id="calculateButton" class="btn form__btn">Calculate</button>
                 </form>
             </div>
 
-            <div class="calculator__output">
-                <div>
-                    <button type="button" id="prevOctaveButton">Previous Octave</button>
-                    <button type="button" id="nextOctaveButton">Next Octave</button>
-                </div>
-                <table class="f-table" id="f-table">
-                    <tr class="f-table__headers">
-                        <th class="f-table__h">Note</th>
-                        <th class="f-table__h">Frequency</th>
-                    </tr>
-                </table>
+            <div class="outputSection subsection" id="tableContainer">
+                <!-- table no visible -->
+                <h4>Hz</h2>
+                    <table class=" f-table" id="f-table">
+                        <tbody>
+                            <tr class="f-table__headers">
+                                <th class="f-table__h">Note</th>
+                                <th class="f-table__h">Frequency</th>
+                            </tr>
+                        </tbody>
+                        <tr class="f-table__row">
+                            <td class="f-table__note">4B</td>
+                            <td class="f-table__frecuency">493.88330 hz</td>
+                        </tr>
+                        <tr class="f-table__row f-table__row--black">
+                            <td class="f-table__note">4A#</td>
+                            <td class="f-table__frecuency">466.16376 hz</td>
+                        </tr>
+                        <tr class="f-table__row">
+                            <td class="f-table__note">4A</td>
+                            <td class="f-table__frecuency">440.00000 hz</td>
+                        </tr>
+                        <tr class="f-table__row f-table__row--black">
+                            <td class="f-table__note">4G#</td>
+                            <td class="f-table__frecuency">415.30470 hz</td>
+                        </tr>
+                        <tr class="f-table__row">
+                            <td class="f-table__note">4G</td>
+                            <td class="f-table__frecuency">391.99544 hz</td>
+                        </tr>
+                        <tr class="f-table__row f-table__row--black">
+                            <td class="f-table__note">4F#</td>
+                            <td class="f-table__frecuency">369.99442 hz</td>
+                        </tr>
+                        <tr class="f-table__row">
+                            <td class="f-table__note">4F</td>
+                            <td class="f-table__frecuency">349.22823 hz</td>
+                        </tr>
+                        <tr class="f-table__row">
+                            <td class="f-table__note">4E</td>
+                            <td class="f-table__frecuency">329.62756 hz</td>
+                        </tr>
+                        <tr class="f-table__row f-table__row--black">
+                            <td class="f-table__note">4D#</td>
+                            <td class="f-table__frecuency">311.12698 hz</td>
+                        </tr>
+                        <tr class="f-table__row">
+                            <td class="f-table__note">4D</td>
+                            <td class="f-table__frecuency">293.66477 hz</td>
+                        </tr>
+                        <tr class="f-table__row f-table__row--black">
+                            <td class="f-table__note">4C#</td>
+                            <td class="f-table__frecuency">277.18263 hz</td>
+                        </tr>
+                        <tr class="f-table__row">
+                            <td class="f-table__note">4C</td>
+                            <td class="f-table__frecuency">261.62557 hz</td>
+                        </tr>
+                    </table>
+                    <div class="outputSection__buttonsdiv">
+                        <button class="btn outputSection__btnprevious" type="button"
+                            id="prevOctaveButton">Previous</button>
+                        <button class="btn outputSection__btnnext" type="button" id="nextOctaveButton">Next</button>
+                    </div>
             </div>
         </section>
     </main>
