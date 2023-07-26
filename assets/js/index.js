@@ -25,11 +25,12 @@ function calculateFrequencies(tuning) {
 function updateTableVisibility(visible) {
     const tableContainer = document.getElementById("tableContainer");
     if (visible) {
-        tableContainer.classList.add("show"); // Agrega la clase "show" para mostrar la tabla suavemente
+        tableContainer.classList.add("show");
     } else {
-        tableContainer.classList.remove("show"); // Remueve la clase "show" para ocultar la tabla suavemente
+        tableContainer.classList.remove("show");
     }
 }
+
 
 $calculateButton.addEventListener("click", () => {
     const tuning = parseFloat($tuningInput.value);

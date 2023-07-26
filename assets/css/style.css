@@ -60,7 +60,7 @@ h1 {
 
 h4 {
     font-size: 2em;
-    margin: 0 auto 1em; /* Remove top and bottom margin, and center horizontally using auto */
+    margin: 1em auto 1em auto; /* Remove top and bottom margin, and center horizontally using auto */
     max-width: 90%;
     display: flex;
     flex-direction: column;
@@ -118,6 +118,7 @@ h4 {
     background-color: var(--color-primary);
     box-shadow: inset 0.1em 0.1em 0.5em var(--color-shadow),
         inset -0.1em -0.1em 0.1em var(--color-light);
+    color: #2a947b;
 }
 
 .calculator {
@@ -178,11 +179,14 @@ h4 {
 }
 
 .outputSection {
-    transition: opacity 1s;
+    transform: scale(0.8) translateY(20px);
+    opacity: 0;
+    transition: 2s;
     min-width: 500px;
 }
 
 #tableContainer.show {
+    transform: scale(1) translateY(0px);
     opacity: 1;
 }
 
@@ -191,7 +195,7 @@ h4 {
     border: none;
     font-size: 1em;
     width: 100%;
-    margin: 2em 0em;
+    margin: 0em 0em;
 }
 
 .f-table__headers {
@@ -208,7 +212,6 @@ h4 {
     border-radius: 0px 0.5em 0.5em 0px;
     transition: 0.5s;
     height: 2.5em;
-    box-shadow: 1em 1em 1em var(--color-shadow);
 }
 
 .f-table__row:hover {
@@ -237,6 +240,7 @@ h4 {
 }
 
 .outputSection__buttonsdiv {
+    margin: 2em 0 0 0;
     display: inline-flex;
     text-align: center;
 }
