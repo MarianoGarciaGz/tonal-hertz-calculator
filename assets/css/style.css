@@ -132,7 +132,7 @@ h4 {
     margin: 2em auto 0em auto;
     box-shadow: -0.5em -0.5em 2em var(--color-light),
         0.5em 0.5em 2em var(--color-shadow);
-    padding: none;
+    padding: 0 0 1em 0;
     justify-content: center; /* Center items horizontally */
     align-items: center; /* Center items vertically */
 }
@@ -187,7 +187,7 @@ h4 {
 }
 
 #tableContainer.show {
-    display: none;
+    display: block;
     transform: scale(1) translateY(0px);
     opacity: 1;
 }
