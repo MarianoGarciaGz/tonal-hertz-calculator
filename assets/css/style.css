@@ -141,7 +141,7 @@ h4 {
     margin: auto;
     width: 50%;
     height: auto;
-    padding: 2em 5em;
+    padding: 1em 5em;
     display: flex;
     flex-direction: column;
     justify-content: center; /* Center items horizontally */
@@ -181,13 +181,19 @@ h4 {
 .outputSection {
     transform: scale(0.8) translateY(20px);
     opacity: 0;
+    display: none;
     transition: 2s;
     min-width: 500px;
 }
 
 #tableContainer.show {
+    display: none;
     transform: scale(1) translateY(0px);
     opacity: 1;
+}
+
+.outputSection__h4 {
+    margin: 0.5em auto 1em auto;
 }
 
 .f-table {
