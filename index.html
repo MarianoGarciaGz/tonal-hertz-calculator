@@ -10,6 +10,8 @@
     <meta content="" name="keywords">
 
     <!-- Favicon -->
+    <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,7 +31,7 @@
         <h1 class="">Hertz Calculator</h1>
         <section class="calculator">
             <div class="variables subsection">
-                <h4>Variables</h4>
+                <h4>Input</h4>
                 <form class="variables__form form" id="variables">
                     <div class="form__div">
                         <label class="form__label">A4:</label>
@@ -42,8 +44,10 @@
                     </div>
                     <div class="form__div">
                         <label class="form__label">In:</label>
-                        <input type="text" id="notesInput" placeholder="Hz" class="input form__input" value="Hz"
-                            disabled>
+                        <select class="input form__input" name="cars" id="notesInput" multiple>
+                            <option value="hz">Hz</option>
+                            <option value="ms">Ms</option>
+                        </select>
                     </div>
                     <div class="form__div">
                         <label class="form__label">Decimals:</label>
@@ -113,9 +117,8 @@
                         </tr>
                     </table>
                     <div class="outputSection__buttonsdiv">
-                        <button class="btn outputSection__btnprevious" type="button"
-                            id="prevOctaveButton">Previous</button>
-                        <button class="btn outputSection__btnnext" type="button" id="nextOctaveButton">Next</button>
+                        <button class="btn outputSection__btnprevious" type="button" id="prevOctaveButton">«</button>
+                        <button class="btn outputSection__btnnext" type="button" id="nextOctaveButton">»</button>
                     </div>
             </div>
         </section>
